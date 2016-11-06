@@ -1,4 +1,5 @@
 #include <Adafruit_BMP085.h>
+#include <util/delay.h>
 #include <U8x8lib.h>
 #include <DHT.h>
 #include <DHT_U.h>
@@ -32,7 +33,7 @@ void setup(void)
   } else {
     u8x8.drawString(0, 1, "has started...");
   }
-  delay(500);
+  _delay_ms(500);
   u8x8.clearDisplay();
 }
 
@@ -99,5 +100,5 @@ void loop(void)
   hhGhStatus.toCharArray(hhGhStatusOut, hhGhStatus.length() + 1);
   u8x8.drawString(0, 3, hhGhStatusOut);
 
-  delay(1000);
+  _delay_ms(1000);
 }
