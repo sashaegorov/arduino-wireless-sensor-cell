@@ -34,6 +34,7 @@ void setup(void)
     u8x8.drawString(0, 1, "has started...");
   }
   _delay_ms(500);
+  u8x8.setContrast(0);
   u8x8.clearDisplay();
 }
 
@@ -62,7 +63,7 @@ void loop(void)
   dht.humidity().getEvent(&dhtHumidEvent);
 
   if (isnan(dhtTempEvent.temperature) || isnan(dhtHumidEvent.relative_humidity)) {
-    u8x8.drawString(0, 3, "DHT22 failed");
+    u8x8.drawString(0, 0, "Humidity...");
   } else {
     String tAltStatus = String(
                           tAlt + String(dhtTempEvent.temperature, PRECISION) + c + "/" +
