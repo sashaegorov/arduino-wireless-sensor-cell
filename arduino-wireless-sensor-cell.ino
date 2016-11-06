@@ -23,10 +23,7 @@ void setup(void)
 {
   u8x8.begin();
   u8x8.setPowerSave(0);
-  u8x8.setContrast(255);
   u8x8.setFont(u8x8_font_amstrad_cpc_extended_f);
-
-  u8x8.drawString(0, 0, "Started...");
 
   u8x8.drawString(0, 0, "Pressure sensor");
   if (!bmp.begin()) {
